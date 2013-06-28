@@ -3,7 +3,7 @@
 @section('header')
 <h3>
     <i class="icon-user"></i>
-    {{ $user->first_name }} Permissions | Permissions set here will override groups permissions
+    {{ $user->first_name }} {{ Lang::get('backend::groups.permissions') }} | {{ Lang::get('backend::permissions.override_groups_permissions') }}
 </h3>
 @stop
 
@@ -29,25 +29,25 @@
     <div class="span12 margin-10-top">
 
         <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a href="#generic" data-toggle="tab">Generic Permissions</a></li>
-            <li><a href="#module" data-toggle="tab">Modules Permissions</a></li>
+            <li class="active"><a href="#generic" data-toggle="tab">{{ Lang::get('backend::permissions.generic_permissions') }}</a></li>
+            <li><a href="#module" data-toggle="tab">{{ Lang::get('backend::permissions.modules_permissions') }}</a></li>
         </ul>
 
         <div class="tab-content">
             <div class="tab-pane active" id="generic">
-                <legend>Super User
-                    <small>Access Everything</small>
+                <legend> {{ Lang::get('backend::users.super_user') }}
+                    <small>{{ Lang::get('backend::users.access_everything') }}</small>
                 </legend>
-                {{ Former::select('rules[superuser]','Super User')
-                ->options(array('0' => 'No','1' => 'Yes'))
+                {{ Former::select('rules[superuser]', Lang::get('backend::users.super_user'))
+                ->options(array('0' => Lang::get('backend::users.no'),'1' => Lang::get('backend::users.yes')))
                 ->value($user->isSuperUser() ? 1 : 0)
                 ->class('select2')
                 }}
                 @foreach( $genericPerm as $perm)
-                <legend>Generic Permissions</legend>
+                <legend>{{ Lang::get('backend::permissions.generic_permissions') }}</legend>
                 @foreach( $perm['permissions'] as $input )
                 {{ Former::select($input['name'],$input['text'])
-                ->options(array('0' => 'Inherit','1' => 'Allow','-1' => 'Deny'))
+                ->options(array('0' =>  Lang::get('backend::permissions.inherit'),'1' =>  Lang::get('backend::permissions.allow'),'-1' => Lang::get('backend::permissions.deny')))
                 ->value($input['value'])
                 ->class('select2')->id($input['id'])
                 }}
@@ -62,10 +62,10 @@
                 </div>
                 @else
                 @foreach( $modulePerm as $perm)
-                <legend>{{ $perm['name'] }} Module</legend>
+                <legend>{{ $perm['name'] }} {{ Lang::get('backend::permissions.module') }}</legend>
                 @foreach( $perm['permissions'] as $input )
                 {{ Former::select($input['name'],$input['text'])
-                ->options(array('0' => 'Inherit','1' => 'Allow','-1' => 'Deny'))
+                ->options(array('0' => Lang::get('backend::permissions.inherit'),'1' => Lang::get('backend::permissions.allow'),'-1' => Lang::get('backend::permissions.deny')))
                 ->value($input['value'])
                 ->class('select2')->id($input['id'])
                 }}
@@ -76,8 +76,8 @@
         </div>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Save changes</button>
-            <a href="{{route('admin.users.index')}}" class="btn">Cancel</a>
+            <button type="submit" class="btn btn-primary">{{ Lang::get('backend::permissions.save_changes') }}</button>
+            <a href="{{route('admin.users.index')}}" class="btn">{{ Lang::get('backend::permissions.cancel') }}</a>
         </div>
     </div>
 </div>

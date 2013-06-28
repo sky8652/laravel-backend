@@ -137,7 +137,7 @@
 
 <div class="clearfix"></div>
 <div id="footer">
-    <p>2013 © {{ $backend['site_name'] }} </p>
+    <p>2013 &copy; {{ $backend['site_name'] }} By <a href="http://www.ecdo.cc" target="_blank">ecdo.cc</a> </p>
 </div>
 
 <!-- #helpModal -->
@@ -147,11 +147,13 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="helpModalLabel"><i class="icon-external-link"></i> {{ Lang::get('backend::common.help') }}</h3>
     </div>
+
     <div class="modal-body">
         @section('help')
         <p>{{ Lang::get('backend::common.no_help') }}</p>
         @show
     </div>
+
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">{{ Lang::get('backend::common.close') }}</button>
     </div>

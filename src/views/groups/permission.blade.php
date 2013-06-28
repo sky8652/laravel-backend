@@ -3,7 +3,7 @@
 @section('header')
 <h3>
     <i class="icon-group"></i>
-    {{$group->name}} Group Permissions
+    {{$group->name}} {{ Lang::get('backend::groups.group') }} {{ Lang::get('backend::groups.permissions') }}
 </h3>
 @stop
 
@@ -31,18 +31,18 @@
         {{ Former::horizontal_open(route('admin.groups.permissions', array($group->id)))->method('PUT') }}
 
         <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a href="#generic" data-toggle="tab">Generic Permissions</a></li>
-            <li><a href="#module" data-toggle="tab">Modules Permissions</a></li>
+            <li class="active"><a href="#generic" data-toggle="tab">{{ Lang::get('backend::permissions.generic_permissions') }}</a></li>
+            <li><a href="#module" data-toggle="tab">{{ Lang::get('backend::permissions.modules_permissions') }}</a></li>
         </ul>
 
         <div class="tab-content">
 
             <div class="tab-pane active" id="generic">
                 @foreach( $genericPerm as $perm)
-                <legend>Generic Permissions</legend>
+                <legend>{{ Lang::get('backend::permissions.generic_permissions') }}</legend>
                 @foreach( $perm['permissions'] as $input )
                 {{ Former::select($input['name'],$input['text'])
-                ->options(array('0' => 'Deny', '1' => 'Allow'))
+                ->options(array('0' => Lang::get('backend::permissions.deny'), '1' => Lang::get('backend::permissions.allow')))
                 ->value($input['value'])
                 ->class('select2')->id($input['id'])
                 }}
@@ -57,10 +57,10 @@
                 </div>
                 @else
                 @foreach( $modulePerm as $perm)
-                <legend>{{ $perm['name'] }} Module</legend>
+                <legend>{{ $perm['name'] }} {{ Lang::get('backend::permissions.module') }}</legend>
                 @foreach( $perm['permissions'] as $input )
                 {{ Former::select($input['name'],$input['text'])
-                ->options(array('0' => 'Deny', '1' => 'Allow'))
+                ->options(array('0' => Lang::get('backend::permissions.deny'), '1' => Lang::get('backend::permissions.allow')))
                 ->value($input['value'])
                 ->class('select2')->id($input['id'])
                 }}
@@ -71,8 +71,8 @@
         </div>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Save changes</button>
-            <a href="{{route('admin.groups.index')}}" class="btn">Cancel</a>
+            <button type="submit" class="btn btn-primary">{{ Lang::get('backend::permissions.save_changes') }}</button>
+            <a href="{{route('admin.groups.index')}}" class="btn">{{ Lang::get('backend::permissions.cancel') }}</a>
         </div>
 
         {{ Former::close() }}

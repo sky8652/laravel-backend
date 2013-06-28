@@ -18,6 +18,10 @@ return array(
     'help'                    => '帮助',
     'close'                   => '关闭',
     'no_help'                 => '此操作没有帮助。',
-    'logout' => '退出',
-    'homepage' => '首页',
+    'logout'                  => '退出',
+    'homepage'                => '首页',
+    'users'                   => '用户',
+    'manage_users'            => '管理用户',
+    'groups'                  => '用户组',
+    'permissions'             => '权限',
 );

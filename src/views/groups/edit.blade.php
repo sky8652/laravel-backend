@@ -3,12 +3,12 @@
 @section('header')
     <h3>
         <i class="icon-group"></i>
-        Edit "{{ $group->name }}" Group
+        {{ Lang::get('backend::groups.edit') }} "{{ $group->name }}" {{ Lang::get('backend::groups.group') }}
     </h3>
 @stop
 
 @section('help')
-    <p class="lead">Groups</p>
+    <p class="lead">{{ Lang::get('backend::groups.groups') }}</p>
     <p>
         Users can be placed into groups to manage permissions.
     </p>
@@ -24,11 +24,11 @@
 
 
 
-                    {{ Former::xlarge_text('name','Name')->value($group->name)->required() }}
+                    {{ Former::xlarge_text('name', Lang::get('backend::groups.name'))->value($group->name)->required() }}
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                        <a href="{{route('admin.groups.index')}}" class="btn">Cancel</a>
+                        <button type="submit" class="btn btn-primary">{{ Lang::get('backend::groups.save_changes') }}</button>
+                        <a href="{{route('admin.groups.index')}}" class="btn">{{ Lang::get('backend::groups.cancel') }}</a>
                     </div>
 
             {{ Former::close() }}

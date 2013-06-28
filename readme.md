@@ -1,5 +1,7 @@
 ## Laravel 通用后台
 
+![预览](http://ww2.sinaimg.cn/large/62511611jw1e63vrqhg9uj20y20hy401.jpg)
+
 ## 安装
 
 请先确认已经安装Composer. 编辑项目中的  文件，然后加入 `ecdo/backend`.
@@ -14,9 +16,11 @@
 
 更新包 `composer update` 或者初始化包 `composer install`。
 
+`composer update` 请清空 `app/storage/views`
+
 需要添加以下服务到系统。
 
-打开 `app/config/app.php` ， 然后添加新的值到 `providers` 数组.
+打开 `app/config/app.php` ， 然后添加新的值到 `providers` 数组：
 
 ```php
 'Former\FormerServiceProvider',
@@ -42,7 +46,7 @@
 
 现在可以访问 [http://localhost/admin](http://localhost/admin) 来操作后台了。
 
-
+功能开发中...
 
 ****************************************************************************************************
 
@@ -94,3 +98,6 @@ To create a user simply do `php artisan backend:user`
 Done! Just go to [http://localhost/admin](http://localhost/admin) to access the backend.
 
 fork https://github.com/stevemo/cpanel
+
+##License
+This is free software distributed under the terms of the MIT license

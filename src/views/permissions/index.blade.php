@@ -3,7 +3,7 @@
 @section('header')
 <h3>
     <i class="icon-ban-circle"></i>
-    Permissions
+    {{ Lang::get('backend::permissions.permissions') }}
 </h3>
 @stop
 
@@ -28,11 +28,11 @@
 
 <div class="row">
     <div class="span12">
-        <h4>Generic permissions</h4>
+        <h4>{{ Lang::get('backend::permissions.generic_permissions') }}</h4>
 
         <p class="well">
             @foreach ($roles['inputs'] as $role => $value)
-            {{ ucfirst($role) }}
+            {{ Lang::get('backend::permissions.'. strtolower($role)) }}
             @endforeach
         </p>
 
@@ -41,13 +41,13 @@
 
 <div class="row">
     <div class="span12">
-        <h4>Modules permissions</h4>
+        <h4>{{ Lang::get('backend::permissions.modules_permissions') }}</h4>
 
         <div class="btn-toolbar">
             <a href="{{ URL::route('admin.permissions.create') }}" class="btn btn-primary" rel="tooltip"
-               title="Create New Permission">
+               title="{{ Lang::get('backend::permissions.create_new_permission') }}">
                 <i class="icon-plus"></i>
-                New Permission
+                {{ Lang::get('backend::permissions.new_permission') }}
             </a>
         </div>
 
@@ -59,8 +59,8 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Module</th>
-                <th>Roles</th>
+                <th>{{ Lang::get('backend::permissions.module') }}</th>
+                <th>{{ Lang::get('backend::permissions.roles') }}</th>
                 <th></th>
             </tr>
             </thead>
@@ -77,11 +77,12 @@
                 </td>
                 <td>
                     <a href="{{ route('admin.permissions.edit', array($permission->id)) }}"
-                       class="btn" rel="tooltip" title="Edit Permission">
+                       class="btn" rel="tooltip" title="{{ Lang::get('backend::permissions.edit_permission') }}">
                         <i class="icon-edit"></i>
                     </a>
                     <a href="{{ route('admin.permissions.destroy', array($permission->id)) }}"
-                       class="btn btn-danger" rel="tooltip" title="Delete Permission" data-method="delete"
+                       class="btn btn-danger" rel="tooltip"
+                       title="{{ Lang::get('backend::permissions.delete_permission') }}" data-method="delete"
                        data-modal-text="delete this Permission?">
                         <i class="icon-remove"></i>
                     </a>

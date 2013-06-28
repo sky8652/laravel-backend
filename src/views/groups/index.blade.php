@@ -3,12 +3,12 @@
 @section('header')
 <h3>
     <i class="icon-group"></i>
-    Groups
+    {{ Lang::get('backend::groups.groups') }}
 </h3>
 @stop
 
 @section('help')
-<p class="lead">Groups</p>
+<p class="lead">{{ Lang::get('backend::groups.groups') }}</p>
 <p>
     Users can be placed into groups to manage permissions.
 </p>
@@ -23,9 +23,9 @@
 
         <div class="btn-toolbar">
             <a href="{{ URL::route('admin.groups.create') }}" class="btn btn-primary" rel="tooltip"
-               title="Create New Group">
+               title="{{ Lang::get('backend::groups.create_new_group') }}">
                 <i class="icon-plus"></i>
-                New group
+                 {{ Lang::get('backend::groups.new_group') }}
             </a>
         </div>
 
@@ -37,7 +37,7 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Name</th>
+                <th>{{ Lang::get('backend::groups.name') }}</th>
                 <th class="span4"></th>
             </tr>
             </thead>
@@ -47,15 +47,17 @@
                 <td>{{ $group->name }}</td>
                 <td>
                     <a href="{{ route('admin.groups.edit', array($group->id)) }}"
-                       class="btn" rel="tooltip" title="Edit Group">
+                       class="btn" rel="tooltip" title="{{ Lang::get('backend::groups.edit_group') }}">
                         <i class="icon-edit"></i>
                     </a>
+
                     <a href="{{ route('admin.groups.permissions', array($group->id)) }}"
-                       class="btn" rel="tooltip" title="Edit Group Permissions">
-                        Permissions <i class="icon-arrow-right"></i>
+                       class="btn" rel="tooltip" title="{{ Lang::get('backend::groups.edit_group_permissions') }}">
+                         {{ Lang::get('backend::groups.permissions') }} <i class="icon-arrow-right"></i>
                     </a>
+
                     <a href="{{ route('admin.groups.destroy', array($group->id)) }}"
-                       class="btn btn-danger" rel="tooltip" title="Delete Group" data-method="delete"
+                       class="btn btn-danger" rel="tooltip" title="{{ Lang::get('backend::groups.delete_group') }}" data-method="delete"
                        data-modal-text="delete this group?">
                         <i class="icon-remove"></i>
                     </a>

@@ -3,7 +3,7 @@
 @section('header')
 <h3>
     <i class="icon-user"></i>
-    Edit User &quot;{{ $user->first_name }} {{ $user->last_name }}&quot;
+    {{ Lang::get('backend::users.edit_user') }} &quot;{{ $user->first_name }} {{ $user->last_name }}&quot;
 </h3>
 @stop
 
@@ -22,23 +22,23 @@
 
         <div class="btn-toolbar">
             <a href="{{ route('admin.users.destroy', array($user->id)) }}"
-               class="btn btn-danger" rel="tooltip" title="Delete User"
+               class="btn btn-danger" rel="tooltip" title="{{ Lang::get('backend::users.delete_user') }}"
                data-modal-text="delete this user?" data-method="delete">
                 <i class="icon-trash"></i>
-                Delete
+                {{ Lang::get('backend::users.delete') }}
             </a>
         </div>
 
         <legend>
-            <small>items mark with * are required.</small>
+            <small>{{ Lang::get('backend::users.items_mark_required') }}</small>
         </legend>
-        {{ Former::xlarge_text('first_name', 'First Name', $user->first_name)->required() }}
-        {{ Former::xlarge_text('last_name', 'Last Name', $user->last_name)->required() }}
-        {{ Former::xlarge_text('email','Email', $user->email)->required() }}
+        {{ Former::xlarge_text('first_name', Lang::get('backend::users.first_name'), $user->first_name)->required() }}
+        {{ Former::xlarge_text('last_name', Lang::get('backend::users.last_name'), $user->last_name)->required() }}
+        {{ Former::xlarge_text('email',Lang::get('backend::users.email'), $user->email)->required() }}
 
-        <legend>Groups</legend>
+        <legend>{{ Lang::get('backend::users.groups') }}</legend>
         <div class="control-group">
-            <label for="groups[]" class="control-label">Groups</label>
+            <label for="groups[]" class="control-label">{{ Lang::get('backend::users.groups') }}</label>
 
             <div class="controls">
                 <select id="groups" name="groups[]" class="select2" multiple="true">
@@ -53,15 +53,15 @@
             </div>
         </div>
 
-        <legend>Password
-            <small>leave blank to keep the same password</small>
+        <legend>{{ Lang::get('backend::users.password') }}
+            <small>{{ Lang::get('backend::users.leave_blank_keep_same_password') }}</small>
         </legend>
-        {{ Former::xlarge_password('password', 'Password') }}
-        {{ Former::xlarge_password('password_confirmation', 'Confirm Password') }}
+        {{ Former::xlarge_password('password', Lang::get('backend::users.password')) }}
+        {{ Former::xlarge_password('password_confirmation', Lang::get('backend::users.confirm_password')) }}
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Save changes</button>
-            <a href="{{route('admin.users.index')}}" class="btn">Cancel</a>
+            <button type="submit" class="btn btn-primary">{{ Lang::get('backend::users.save_changes') }}</button>
+            <a href="{{route('admin.users.index')}}" class="btn">{{ Lang::get('backend::users.cancel') }}</a>
         </div>
 
         {{Former::close()}}

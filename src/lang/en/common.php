@@ -18,7 +18,11 @@ return array(
     'help'                    => 'Help',
     'close'                   => 'Close',
     'no_help'                 => 'No Help for this section.',
-    'logout' => 'Logout',
-    'homepage' => 'HomePage',
+    'logout'                  => 'Logout',
+    'homepage'                => 'HomePage',
+    'users'                   => 'Users',
+    'manage_users'            => 'Manage Users',
+    'groups'                  => 'Groups',
+    'permissions'             => 'Permissions'
 
 );

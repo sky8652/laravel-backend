@@ -19,7 +19,7 @@
             @endif
         </div>
 
-        <form class="form-horizontal" action="{{ URL::route('admin.login') }}" method="POST">
+        <form class="form-horizontal signin" action="{{ URL::route('admin.login') }}" method="POST">
             <div class="control-group">
                 <label class="control-label" for="login_attribute">{{
                     Lang::get('backend::common.'.strtolower($login_attribute)) }}</label>

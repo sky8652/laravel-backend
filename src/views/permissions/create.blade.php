@@ -3,7 +3,7 @@
 @section('header')
 <h3>
     <i class="icon-ban-circle"></i>
-    Create new permissions for a module
+    {{ Lang::get('backend::permissions.create_new_permissions_module') }}
 </h3>
 @stop
 
@@ -28,11 +28,12 @@
     <div class="span12 margin-top-20">
 
         {{ Former::horizontal_open(route('admin.permissions.store')) }}
-        {{ Former::xlarge_text('name', 'Module Name') }}
-        {{ Former::checkboxes('permissions')->checkboxes($roles['inputs'])->label('Permissions')}}
+        {{ Former::xlarge_text('name', Lang::get('backend::permissions.module_name')) }}
+
+        {{ Former::checkboxes('permissions')->checkboxes($roles['inputs'])->label(Lang::get('backend::permissions.permissions'))}}
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Save changes</button>
-            <a href="{{ route('admin.permissions.index') }}" class="btn">Cancel</a>
+            <button type="submit" class="btn btn-primary">{{ Lang::get('backend::permissions.save_changes') }}</button>
+            <a href="{{ route('admin.permissions.index') }}" class="btn">{{ Lang::get('backend::permissions.cancel') }}</a>
         </div>
         {{ Former::close() }}
 
