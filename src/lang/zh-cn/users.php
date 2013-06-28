@@ -1,16 +1,15 @@
 <?php
 
 return array(
-
-    'logout'                     => 'Logout successfully.',
-    'register_success'           => 'Congratulation! You are now register.',
-    'create_success'             => 'User created.',
-    'update_success'             => 'User updated.',
-    'login_success'              => 'You are now log in.',
-    'delete_denied'              => 'Sorry you can\'t delete yourself.',
-    'delete_success'             => 'User deleted.',
-    'permissions_update_success' => 'User Permissions updated.',
-    'activation_success'         => 'User activated successfully.',
-    'activation_fail'            => 'User activation failed.',
-    'deactivation_success'       => 'User deactivated successfully.',
+    'logout'                     => '退出成功.',
+    'register_success'           => '恭喜! 您注册成功.',
+    'create_success'             => '用户创建成功.',
+    'update_success'             => '用户更新成功.',
+    'login_success'              => '登陆成功.',
+    'delete_denied'              => '对不起，您不能自行删除.',
+    'delete_success'             => '用户删除成功.',
+    'permissions_update_success' => '用户权限更新成功.',
+    'activation_success'         => '用户启用成功.',
+    'activation_fail'            => '用户启用失败.',
+    'deactivation_success'       => '用户停用成功.',
 );

@@ -12,11 +12,11 @@ Route::get('admin', array(
     'before' => 'auth.backend:admin.view'
 ));
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth.backend'), function()
+Route::group(array('prefix' => 'admin', 'before' => 'auth.backend'), function ()
 {
     Route::resource('users', 'Ecdo\Backend\Controllers\UsersController');
-    Route::resource('groups', 'Ecdo\Backend\Controllers\GroupsController',array('except' => array('show')));
-    Route::resource('permissions', 'Ecdo\Backend\Controllers\PermissionsController',array('except' => array('show')));
+    Route::resource('groups', 'Ecdo\Backend\Controllers\GroupsController', array('except' => array('show')));
+    Route::resource('permissions', 'Ecdo\Backend\Controllers\PermissionsController', array('except' => array('show')));
 });
 
 /*
@@ -107,7 +107,7 @@ Route::get('admin/login', array(
     'uses' => 'Ecdo\Backend\Controllers\CpanelController@getLogin'
 ));
 
-Route::post('admin/login','Ecdo\Backend\Controllers\CpanelController@postLogin');
+Route::post('admin/login', 'Ecdo\Backend\Controllers\CpanelController@postLogin');
 
 Route::get('admin/logout', array(
     'as'   => 'admin.logout',
@@ -119,7 +119,7 @@ Route::get('admin/register', array(
     'uses' => 'Ecdo\Backend\Controllers\CpanelController@getRegister'
 ));
 
-Route::post('admin/register','Ecdo\Backend\Controllers\CpanelController@postRegister');
+Route::post('admin/register', 'Ecdo\Backend\Controllers\CpanelController@postRegister');
 
 
 /*
@@ -132,34 +132,35 @@ Route::post('admin/register','Ecdo\Backend\Controllers\CpanelController@postRegi
 | You can provide your own rule by passing a argument to the filter
 |
 */
-Route::filter('auth.backend', function($route, $request, $userRule = null)
+Route::filter('auth.backend', function ($route, $request, $userRule = NULL)
 {
-    if (! Sentry::check())
+    if (!Sentry::check())
     {
         Session::put('url.intended', URL::full());
+
         return Redirect::route('admin.login');
     }
 
     // no special route name passed, use the current name route
-    if ( is_null($userRule) )
+    if (is_null($userRule))
     {
         list($prefix, $module, $rule) = explode('.', Route::currentRouteName());
         switch ($rule)
         {
             case 'index':
             case 'show':
-                $userRule = $module.'.view';
+                $userRule = $module . '.view';
                 break;
             case 'create':
             case 'store':
-                $userRule = $module.'.create';
+                $userRule = $module . '.create';
                 break;
             case 'edit':
             case 'update':
-                $userRule = $module.'.update';
+                $userRule = $module . '.update';
                 break;
             case 'destroy':
-                $userRule = $module.'.delete';
+                $userRule = $module . '.delete';
                 break;
             default:
                 $userRule = Route::currentRouteName();
@@ -167,12 +168,11 @@ Route::filter('auth.backend', function($route, $request, $userRule = null)
         }
     }
     // no access to the request page and request page not the root admin page
-    if ( ! Sentry::hasAccess($userRule) and $userRule !== 'admin.view' )
+    if (!Sentry::hasAccess($userRule) and $userRule !== 'admin.view')
     {
         return Redirect::to('admin')->with('error', Lang::get('backend::permissions.access_denied'));
-    }
-    // no access to the request page and request page is the root admin page
-    else if( ! Sentry::hasAccess($userRule) and $userRule === 'admin.view' )
+    } // no access to the request page and request page is the root admin page
+    else if (!Sentry::hasAccess($userRule) and $userRule === 'admin.view')
     {
         //can't see the admin home page go back to home site page
         return Redirect::to('/')->with('error', Lang::get('backend::permissions.access_denied'));

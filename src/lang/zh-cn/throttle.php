@@ -1,7 +1,6 @@
 <?php
 
 return array(
-
-    'success'          => 'This user is now :action',
-    'action_not_found' => 'This action is not available [:action]'
+    'success'          => '执行成功  :action',
+    'action_not_found' => '操作不存在 [:action]'
 );

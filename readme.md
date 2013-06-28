@@ -2,7 +2,7 @@
 
 ## 安装
 
-请先确认已经安装Composer. 编辑项目中的 `composer.json` 文件，然后加入 `ecdo/backend`.
+请先确认已经安装Composer. 编辑项目中的  文件，然后加入 `ecdo/backend`.
 
 ```javascript
 {
@@ -16,7 +16,7 @@
 
 需要添加以下服务到系统。
 
-打开 `app/config/app.php` ， 然后添加新的值到'providers'数组.
+打开 `app/config/app.php` ， 然后添加新的值到 `providers` 数组.
 
 ```php
 'Former\FormerServiceProvider',
@@ -31,9 +31,11 @@
 'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 ```
 
+主意：使用中文包请修改 `'locale' => 'zh-cn'`,
+
 最后执行 `php artisan backend:install`
 
-命令执行完成后会生成这些包配置文件 ： Cartalyst/Sentry， Anahkiasen/Former ， Ecdo/Backend ；
+命令执行完成后会生成这些包配置文件 ： `Cartalyst/Sentry`， `Anahkiasen/Former` ， `Ecdo/Backend` ；
 同时相对应的数据库创建完成。
 
 创建一个新用户 `php artisan backend:user`

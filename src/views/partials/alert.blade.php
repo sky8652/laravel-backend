@@ -3,7 +3,7 @@
         <div class="span12 margin-10-top">
             <div class="alert alert-error ">
                 <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>Form Validation Failed : </strong> Change a few things up and try submitting again.
+                <strong>{{ Lang::get('backend::common.form_validation_failed') }} </strong> {{ Lang::get('backend::common.change_things_try_again') }}
             </div>
         </div>
     </div>

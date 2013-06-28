@@ -3,7 +3,7 @@
 @section('header')
 <h3>
     <i class="icon-key"></i>
-    Users Throttling
+    {{ $user->first_name }}&nbsp; {{ $user->last_name }} Throttling Status
 </h3>
 @stop
 
@@ -15,22 +15,15 @@
 @stop
 
 @section('content')
-
 <div class="row">
     <div class="span12">
-
-        <div class="block">
-            <p class="block-heading">{{ $user->first_name }}&nbsp; {{ $user->last_name }} Throttling Status</p>
-
-            <div class="block-body">
-
 
 
 
                 @if ($throttle->isBanned())
                     <div class="media">
                         <a class="pull-left" href="#">
-                            <img class="media-object" src="{{ asset('packages/stevemo/cpanel/img/not-ok-icon.png') }}" alt=""/>
+                            <img class="media-object" src="{{ asset('packages/ecdo/backend/img/not-ok-icon.png') }}" alt=""/>
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Banned</h4>
@@ -47,7 +40,7 @@
                 @else
                     <div class="media">
                         <a class="pull-left" href="#">
-                            <img class="media-object" src="{{ asset('packages/stevemo/cpanel/img/ok-icon.png') }}" alt=""/>
+                            <img class="media-object" src="{{ asset('packages/ecdo/backend/img/ok-icon.png') }}" alt=""/>
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Not Banned</h4>
@@ -66,7 +59,7 @@
                 @if ($throttle->isSuspended())
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="{{ asset('packages/stevemo/cpanel/img/not-ok-icon.png') }}" alt=""/>
+                        <img class="media-object" src="{{ asset('packages/ecdo/backend/img/not-ok-icon.png') }}" alt=""/>
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Suspended</h4>
@@ -83,7 +76,7 @@
                 @else
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="{{ asset('packages/stevemo/cpanel/img/ok-icon.png') }}" alt=""/>
+                        <img class="media-object" src="{{ asset('packages/ecdo/backend/img/ok-icon.png') }}" alt=""/>
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Not Suspended</h4>
@@ -99,8 +92,7 @@
                 </div>
                 @endif
 
-            </div>
-        </div>
+
     </div>
 </div>
 

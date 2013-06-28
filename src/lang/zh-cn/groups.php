@@ -1,8 +1,9 @@
 <?php
 
 return array(
-    'no_group'       => 'No Group found.',
-    'create_success' => 'New group created.',
-    'delete_success' => 'Group deleted.',
-    'update_success' => 'Group updated.',
+    'no_group'       => '用户组不存在.',
+    'create_success' => '用户组创建成功.',
+    'delete_success' => '用户组删除成功.',
+    'update_success' => '用户组更新成功.',
+    'groups' => '用户组',
 );  

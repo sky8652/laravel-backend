@@ -64,7 +64,7 @@ class PermissionProvider {
      * @link   http://stevemo.ca
      *
      * @param  array $inputs
-     * @return Illuminate\Database\Eloquent\Model Permission
+     * @return \Illuminate\Database\Eloquent\Model Permission
      */
     public function create(array $inputs)
     {

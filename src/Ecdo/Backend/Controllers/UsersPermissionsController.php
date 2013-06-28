@@ -12,7 +12,6 @@ use Cartalyst\Sentry\Users\UserNotFoundException;
 
 class UsersPermissionsController extends BaseController {
 
-
     /**
      * @var PermissionProvider
      */

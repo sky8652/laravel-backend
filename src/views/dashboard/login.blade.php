@@ -1,53 +1,63 @@
 @extends(Config::get('backend::views.layout'))
 
 @section('header')
-    <h3>
-        <i class="icon-signin"></i>
-        Sign In
-    </h3>
+<h3>
+    <i class="icon-signin"></i>
+    {{ Lang::get('backend::common.sign_in') }}
+</h3>
 @stop
 
 @section('content')
-    <div class="row">
-        <div class="span12">
+<div class="row">
+    <div class="span12">
 
-            <div class="margin-top-20">
-                @if ( Session::has('login_error') )
-                    <div class="alert-login alert-error">
-                        <strong>{{ Session::get('login_error') }}</strong>
-                    </div>
-                @endif
+        <div class="margin-top-20">
+            @if ( Session::has('login_error') )
+            <div class="alert-login alert-error">
+                <strong>{{ Session::get('login_error') }}</strong>
             </div>
-
-            <form action="{{ URL::route('admin.login') }}" class="form-signin" method="POST">
-                <h2 class="form-signin-heading">Sign In</h2>
-                <label for="{{ $login_attribute }}">{{ ucfirst($login_attribute) }}</label>
-                <input class="input-block-level" type="text"
-                    name="login_attribute" id="login_attribute" value="{{ Input::old('login_attribute') }}">
-                <label for="password">Password</label>
-                <input class="input-block-level" type="password" name="password" id="password" >
-
-                <div class="control-group">
-                    <div class="controls">
-                        <label class="checkbox" for="remember_me">
-                            <input type="checkbox" name="remember_me" value="true">  Remember me on this computer
-                        </label>
-
-                    </div>
-                </div>
-
-                <hr>
-                <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-            </form>
-
-            <div class="login-extra">
-                Don't have an account?
-                {{ HTML::linkRoute('admin.register', 'Register') }}
-                <!--
-                    TODO: make link to forget password
-                 -->
-            </div>
-
+            @endif
         </div>
+
+        <form class="form-horizontal" action="{{ URL::route('admin.login') }}" method="POST">
+            <div class="control-group">
+                <label class="control-label" for="login_attribute">{{
+                    Lang::get('backend::common.'.strtolower($login_attribute)) }}</label>
+                <div class="controls">
+                    <input type="text"
+                           name="login_attribute" id="login_attribute" placeholder="Email"
+                           value="{{ Input::old('login_attribute') }}">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="password">{{ Lang::get('backend::common.password') }}</label>
+                <div class="controls">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember_me" value="true"> {{
+                        Lang::get('backend::common.remember_this_computer') }}
+                    </label>
+                    <button type="submit" class="btn">{{ Lang::get('backend::common.sign_in') }}</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    {{ Lang::get('backend::common.don_account') }}
+                    {{ HTML::linkRoute('admin.register', Lang::get('backend::common.register')) }}
+                    <!--
+                        TODO: make link to forget password
+                     -->
+                </div>
+            </div>
+        </form>
+
     </div>
+</div>
 @stop
