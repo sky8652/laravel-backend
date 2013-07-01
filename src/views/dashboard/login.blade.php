@@ -1,28 +1,34 @@
 @extends(Config::get('backend::views.layout'))
 
-@section('header')
-<h3>
-    <i class="icon-signin"></i>
-    {{ Lang::get('backend::common.sign_in') }}
-</h3>
-@stop
-
 @section('content')
 <div class="row">
     <div class="span12">
 
-        <div class="margin-top-20">
-            @if ( Session::has('login_error') )
-            <div class="alert-login alert-error">
-                <strong>{{ Session::get('login_error') }}</strong>
-            </div>
-            @endif
-        </div>
+
 
         <form class="form-horizontal signin" action="{{ URL::route('admin.login') }}" method="POST">
+
+
+                @if ( Session::has('login_error') )
+            <div class="alert alert-login  alert-error ">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ Session::get('login_error') }}</strong>
+                </div>
+                @endif
+
+            <div class="control-group">
+                <div class="controls">
+                    <h3>
+                        <i class="icon-signin"></i>
+                        {{ Lang::get('backend::common.sign_in') }}
+                    </h3>
+                </div>
+            </div>
+
             <div class="control-group">
                 <label class="control-label" for="login_attribute">{{
                     Lang::get('backend::common.'.strtolower($login_attribute)) }}</label>
+
                 <div class="controls">
                     <input type="text"
                            name="login_attribute" id="login_attribute" placeholder="Email"
@@ -32,6 +38,7 @@
 
             <div class="control-group">
                 <label class="control-label" for="password">{{ Lang::get('backend::common.password') }}</label>
+
                 <div class="controls">
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>

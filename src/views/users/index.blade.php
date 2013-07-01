@@ -72,7 +72,11 @@
                             <li>
                                 <a href="{{ route('admin.users.destroy', array($user->id)) }}"
                                    data-method="delete"
-                                   data-modal-text="delete this User?">
+                                   data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                   data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                   data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                   data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
+                                   data-modal-text="{{ Lang::get('backend::users.delete_this_user') }}">
                                     <i class="icon-trash"></i>&nbsp;{{ Lang::get('backend::users.delete_user') }}
                                 </a>
                             </li>
@@ -81,14 +85,22 @@
                                 @if ($user->isActivated())
                                 <a href="{{ route('admin.users.deactivate', array($user->id)) }}"
                                    data-method="put"
-                                   data-modal-text="Deactivate this User?">
+                                   data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                   data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                   data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                   data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
+                                   data-modal-text="{{ Lang::get('backend::users.deactivate_this_user') }}">
                                     <i class="icon-remove"></i>&nbsp;{{ Lang::get('backend::users.deactivate') }}
                                 </a>
                                 @else
                                 <a href="{{ route('admin.users.activate', array($user->id)) }}"
                                    data-method="put"
-                                   data-modal-text="Activate this User?">
-                                    <i class="icon-check"></i>&nbsp;{{ Lang::get('backend::users.activate') }}
+                                   data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                   data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                   data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                   data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
+                                   data-modal-text="{{ Lang::get('backend::users.activate_this_user') }}">
+                                   <i class="icon-check"></i>&nbsp;{{ Lang::get('backend::users.activate') }}
                                 </a>
                                 @endif
                             </li>

@@ -2,7 +2,7 @@ $(function() {
 
     $('a[rel=tooltip]').tooltip();
 
-        //Apply twitter bootstrap alike style to select element
+    //Apply twitter bootstrap alike style to select element
     $('.select2').select2({
         'width':'element',
         'placeholder' : 'Select'
@@ -25,70 +25,74 @@ $(function() {
  */
 (function() {
 
-	var laravel =
-	{
-		initialize: function()
-		{
-		    this.methodLinks = $('a[data-method]');
-		    this.registerEvents();
-		},
+    var laravel =
+    {
+        initialize: function()
+        {
+            this.methodLinks = $('a[data-method]');
+            this.registerEvents();
+        },
 
-		registerEvents: function()
-		{
-		    this.methodLinks.on('click', this.handleMethod);
-		},
+        registerEvents: function()
+        {
+            this.methodLinks.on('click', this.handleMethod);
+        },
 
-		handleMethod: function(e)
-		{
-		    e.preventDefault();
-		    var link = $(this);
+        handleMethod: function(e)
+        {
+            e.preventDefault();
+            var link = $(this);
 
-		    var httpMethod = link.data('method').toUpperCase();
-		    var allowedMethods = ['PUT', 'DELETE'];
-		    var extraMsg = link.data('modal-text');
-		    var msg  = '<i class="icon-warning-sign modal-icon"></i>&nbsp;Are you sure you want to&nbsp;' + extraMsg;
+            var httpMethod = link.data('method').toUpperCase();
+            var allowedMethods = ['PUT', 'DELETE'];
+            var extraMsg = link.data('modal-text');
+            var sureMsg = link.data('modal-sure');
+            var headerText = link.data('modal-header');
+            var buttonOk = link.data('modal-ok');
+            var buttonCancel = link.data('modal-cancel');
+            var msg  = '<i class="icon-warning-sign modal-icon"></i>&nbsp;' + sureMsg + '&nbsp;' + extraMsg;
 
-		    // If the data-method attribute is not PUT or DELETE,
-		    // then we don't know what to do. Just ignore.
-		    if ( $.inArray(httpMethod, allowedMethods) === - 1 )
-		    {
-		        return;
-		    }
+            // If the data-method attribute is not PUT or DELETE,
+            // then we don't know what to do. Just ignore.
+            if ( $.inArray(httpMethod, allowedMethods) === - 1 )
+            {
+                return;
+            }
 
-		    bootbox.dialog(msg,
-		    [
-		    	{
-		    		"label": "OK",
-		    		"class": "btn-danger",
-		    		"callback": function()
-		    		{
-		    			var form =
-					        $('<form>', {
-					            'method': 'POST',
-					            'action': link.attr('href')
-					        });
+            bootbox.dialog(msg,
+                [
+                    {
+                        "label": buttonOk,
+                        "class": "btn-danger",
+                        "callback": function()
+                        {
+                            var form =
+                                $('<form>', {
+                                    'method': 'POST',
+                                    'action': link.attr('href')
+                                });
 
-					    var hiddenInput =
-					        $('<input>', {
-					            'name': '_method',
-					            'type': 'hidden',
-					            'value': link.data('method')
-					        });
+                            var hiddenInput =
+                                $('<input>', {
+                                    'name': '_method',
+                                    'type': 'hidden',
+                                    'value': link.data('method')
+                                });
 
-					    form.append(hiddenInput).appendTo('body').submit();
-		    		}
-		    	},
-		    	{
-		    		"label": "Cancel",
-		    		"class": "btn-default"
-		    	}
-		    ],
-		    {
-		    	"header": "Please Confirm"
-		    });
-		}
-	};
+                            form.append(hiddenInput).appendTo('body').submit();
+                        }
+                    },
+                    {
+                        "label": buttonCancel,
+                        "class": "btn-default"
+                    }
+                ],
+                {
+                    "header": headerText
+                });
+        }
+    };
 
-	laravel.initialize();
+    laravel.initialize();
 
 })();

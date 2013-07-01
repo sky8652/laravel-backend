@@ -18,4 +18,5 @@ return array(
     'edit'                   => '编辑',
     'save_changes'           => '保存',
     'cancel'                 => '取消',
+    'delete_this_group'      => '删除选中的用户组?',
 );  

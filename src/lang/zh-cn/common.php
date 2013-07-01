@@ -24,4 +24,8 @@ return array(
     'manage_users'            => '管理用户',
     'groups'                  => '用户组',
     'permissions'             => '权限',
+    'please_confirm'          => '请确认',
+    'ok'                      => '确定',
+    'cancel'                  => '取消',
+    'are_you_sure'            => '你确定',
 );

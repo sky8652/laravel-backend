@@ -18,4 +18,5 @@ return array(
     'edit'                   => 'Edit',
     'save_changes'           => 'Save changes',
     'cancel'                 => 'Cancel',
+    'delete_this_group'      => 'delete this group?',
 );  

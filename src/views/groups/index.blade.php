@@ -58,7 +58,12 @@
 
                     <a href="{{ route('admin.groups.destroy', array($group->id)) }}"
                        class="btn btn-danger" rel="tooltip" title="{{ Lang::get('backend::groups.delete_group') }}" data-method="delete"
-                       data-modal-text="delete this group?">
+                       data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                       data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                       data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                       data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
+                       data-modal-text="{{ Lang::get('backend::groups.delete_this_group') }}">
+
                         <i class="icon-remove"></i>
                     </a>
                 </td>

@@ -28,6 +28,7 @@ return array(
     'cancel'                        => '取消',
     'deny'                          => '拒绝',
     'allow'                         => '允许',
-    'inherit' => '继承',
-    'override_groups_permissions' => '在这里设置的权限将会覆盖用户组权限',
+    'inherit'                       => '继承',
+    'override_groups_permissions'   => '在这里设置的权限将会覆盖用户组权限',
+    'delete_this_permission'        => '删除选中的权限？',
 );

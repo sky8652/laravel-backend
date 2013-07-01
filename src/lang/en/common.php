@@ -23,6 +23,10 @@ return array(
     'users'                   => 'Users',
     'manage_users'            => 'Manage Users',
     'groups'                  => 'Groups',
-    'permissions'             => 'Permissions'
+    'permissions'             => 'Permissions',
+    'please_confirm'          => 'Please Confirm',
+    'ok'                      => 'OK',
+    'cancel'                  => 'Cancel',
+    'are_you_sure'            => 'Are you sure you want to',
 
 );

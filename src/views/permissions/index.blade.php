@@ -83,7 +83,12 @@
                     <a href="{{ route('admin.permissions.destroy', array($permission->id)) }}"
                        class="btn btn-danger" rel="tooltip"
                        title="{{ Lang::get('backend::permissions.delete_permission') }}" data-method="delete"
-                       data-modal-text="delete this Permission?">
+                       data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                       data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                       data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                       data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
+                       data-modal-text="{{ Lang::get('backend::permissions.delete_this_permission') }}">
+
                         <i class="icon-remove"></i>
                     </a>
                 </td>

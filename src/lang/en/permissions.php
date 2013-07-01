@@ -26,9 +26,10 @@ return array(
     'module_name'                   => 'Module Name',
     'save_changes'                  => 'Save changes',
     'cancel'                        => 'Cancel',
-    'deny' => 'Deny',
-    'allow' => 'Allow',
-    'inherit' => 'Inherit',
-    'override_groups_permissions' => 'Permissions set here will override groups permissions',
+    'deny'                          => 'Deny',
+    'allow'                         => 'Allow',
+    'inherit'                       => 'Inherit',
+    'override_groups_permissions'   => 'Permissions set here will override groups permissions',
+    'delete_this_permission'        => 'delete this Permission?',
 
 );

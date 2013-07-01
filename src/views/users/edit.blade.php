@@ -23,7 +23,11 @@
         <div class="btn-toolbar">
             <a href="{{ route('admin.users.destroy', array($user->id)) }}"
                class="btn btn-danger" rel="tooltip" title="{{ Lang::get('backend::users.delete_user') }}"
-               data-modal-text="delete this user?" data-method="delete">
+               data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+               data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+               data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+               data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
+               data-modal-text="{{ Lang::get('backend::users.delete_this_user') }}" data-method="delete">
                 <i class="icon-trash"></i>
                 {{ Lang::get('backend::users.delete') }}
             </a>

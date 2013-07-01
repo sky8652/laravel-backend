@@ -4,7 +4,7 @@
 
 ## 安装
 
-请先确认已经安装Composer. 编辑项目中的  文件，然后加入 `ecdo/backend`.
+请先确认已经安装Composer. 编辑项目中的 `composer.json` 文件，然后加入 `ecdo/backend`.
 
 ```javascript
 {
