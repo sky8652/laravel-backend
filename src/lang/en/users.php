@@ -1,7 +1,6 @@
 <?php
 
 return array(
-
     'logout'                         => 'Logout successfully.',
     'register_success'               => 'Congratulation! You are now register.',
     'create_success'                 => 'User created.',
@@ -43,7 +42,7 @@ return array(
     'delete'                         => 'Delete',
     'leave_blank_keep_same_password' => 'leave blank to keep the same password',
     'items_mark_required'            => 'items mark with * are required.',
-    'delete_this_user' => 'delete this User?',
-    'deactivate_this_user' => 'Deactivate this User?',
-    'activate_this_user' => 'Activate this User?',
+    'delete_this_user'               => 'delete this User?',
+    'deactivate_this_user'           => 'Deactivate this User?',
+    'activate_this_user'             => 'Activate this User?',
 );

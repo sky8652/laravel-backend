@@ -43,7 +43,7 @@ return array(
     'leave_blank_keep_same_password' => '留空则不修改密码',
     'items_mark_required'            => '有*记号的选项为必填。',
     'delete_this_user'               => '删除选中的用户?',
-    'deactivate_this_user' => '停用选中的用户?',
-    'activate_this_user' => '启用选中的用户?',
+    'deactivate_this_user'           => '停用选中的用户?',
+    'activate_this_user'             => '启用选中的用户?',
 
 );

@@ -46,6 +46,19 @@
 
 现在可以访问 [http://localhost/admin](http://localhost/admin) 来操作后台了。
 
+## 使用帮助
+
+1. 配置 `app/config/ecdo/backend/config.php` 设置系统参数：后台标题、菜单、模板别名等； 
+2. 控制器使用 `use Ecdo\Backend\Controllers\BaseController;` 然后继承 BaseController；
+3. 模板继承 @extends(Config::get('backend::views.layout')) ， 具体使用模块 可以查看包里面的layout文件。主意:模板文件命名为 `*.blade.php`
+4. 路由设置 参照包里面路由规则写就行了；
+
+**在线文档**  
+bootstrap ： http://twitter.github.io/bootstrap/    
+bootstrap 中文： http://www.bootcss.com/   
+google style： http://todc.github.io/todc-bootstrap/index.html   
+laravel 中文手册： http://www.golaravel.com/docs/  
+ 
 功能开发中...
 
 ****************************************************************************************************
