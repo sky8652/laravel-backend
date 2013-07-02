@@ -62,7 +62,8 @@
                         </div>
 
                         <div class="btn-group">
-                            <a class="btn btn-inverse btn-mini" data-placement="bottom" data-original-title="{{ Lang::get('backend::common.logout') }}"
+                            <a class="btn btn-inverse btn-mini" data-placement="bottom"
+                               data-original-title="{{ Lang::get('backend::common.logout') }}"
                                rel="tooltip"
                                href="{{ route('admin.logout') }}"><i class="icon-off"></i>
                             </a>
@@ -75,15 +76,23 @@
                         <ul class="nav">
                             @foreach (Config::get('backend::menu') as $title => $args)
                             @if ($args['type'] === 'single')
+
+                            @if( Sentry::hasAccess($args['rule']))
                             <li>{{ HTML::linkRoute($args['route'], $title) }}</li>
+                            @endif
+
                             @else
                             <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="blank.html#">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     {{ $title }} <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     @foreach ($args['links'] as $title => $value)
+
+                                    @if( Sentry::hasAccess($value['rule']))
                                     <li>{{ HTML::linkRoute($value['route'], $title) }}</li>
+                                    @endif
+
                                     @endforeach
                                 </ul>
                             </li>
@@ -137,7 +146,7 @@
 
 <div class="clearfix"></div>
 <div id="footer">
-    <p>2013 &copy; {{ $backend['site_name'] }} By <a href="http://www.ecdo.cc" target="_blank">ecdo.cc</a> </p>
+    <p>2013 &copy; {{ $backend['site_name'] }} By <a href="http://www.ecdo.cc" target="_blank">ecdo.cc</a></p>
 </div>
 
 <!-- #helpModal -->

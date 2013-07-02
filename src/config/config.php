@@ -10,11 +10,11 @@ return array(
 
     //menu 2 type are available single or dropdown and it must be a route
     'menu' => array(
-        Lang::get('backend::common.dashboard') => array('type' => 'single', 'route' => 'admin.home'),
+        Lang::get('backend::common.dashboard') => array('type' => 'single', 'route' => 'admin.home', 'rule'=>'admin.view'),
         Lang::get('backend::common.users')     => array('type' => 'dropdown', 'links' => array(
-            Lang::get('backend::common.manage_users') => array('route' => 'admin.users.index'),
-            Lang::get('backend::common.groups')       => array('route' => 'admin.groups.index'),
-            Lang::get('backend::common.permissions')  => array('route' => 'admin.permissions.index')
+            Lang::get('backend::common.manage_users') => array('route' => 'admin.users.index', 'rule'=> 'users.view'),
+            Lang::get('backend::common.groups')       => array('route' => 'admin.groups.index', 'rule'=> 'groups.view'),
+            Lang::get('backend::common.permissions')  => array('route' => 'admin.permissions.index', 'rule'=> 'permissions.view')
         )),
     ),
 

@@ -46,7 +46,7 @@ abstract class BaseModel extends Eloquent {
      * @link   http://stevemo.ca
      *
      * @param  array $attributes
-     * @param  Illuminate\Validation\validator $validator
+     * @param  \Illuminate\Validation\validator $validator
      */
     public function __construct(array $attributes = array())
     {
