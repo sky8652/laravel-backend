@@ -31,7 +31,7 @@
 同时添加类别名，
 
 ```php
-'Former' => 'Former\Facades\Illuminate',
+'Former' => 'Former\Facades\Former',
 'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 ```
 
@@ -99,7 +99,7 @@ Open `app/config/app.php`, and add a new items to the providers array.
 
 Then add the following Class Aliases
 ```php
-'Former' => 'Former\Facades\Illuminate',
+'Former' => 'Former\Facades\Former',
 'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 ```
 
