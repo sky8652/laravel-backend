@@ -57,7 +57,7 @@
 bootstrap ： http://twitter.github.io/bootstrap/    
 bootstrap 中文： http://www.bootcss.com/   
 google style： http://todc.github.io/todc-bootstrap/index.html   
-laravel 中文手册： http://www.golaravel.com/docs/  
+laravel 中文手册： https://github.com/huanghua581/notes/blob/master/PHP/laravel/docs/documentation.md
  
 功能开发中...
 
