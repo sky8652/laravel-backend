@@ -62,9 +62,9 @@ laravel 中文手册： https://github.com/huanghua581/notes/blob/master/PHP/lar
 功能开发中...
 
 ****************************************************************************************************
+## Laravel Backend (For Laravel 4)
 
-## Laravel Backend
-Backend for Laravel 4
+![Screenshot](http://s6.postimg.org/whaj3djvl/ecdo_laravel_backend.png)
 
 ##Features
 * Cartalyst Sentry package
@@ -109,6 +109,13 @@ This will publish the config files for Cartalyst/Sentry, Anahkiasen/Former and E
 To create a user simply do `php artisan backend:user`
 
 Done! Just go to [http://localhost/admin](http://localhost/admin) to access the backend.
+
+##Help
+
+1. Configuring `app / config / ecdo / backend / config.php` to set the system parameters: background titles, menus, templates, aliases, etc.
+2. Controller `use Ecdo \ Backend \ Controllers \ BaseController;` then extend `BaseController;`
+3. Template inheritance @ extends (Config :: get ('backend :: views.layout')), you can view the specific use of the module package inside the layout file. Idea: template file named *.Blade.php
+4. Routing rules are written inside the package routing reference
 
 fork https://github.com/stevemo/cpanel
 
