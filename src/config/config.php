@@ -3,7 +3,7 @@
 return array(
 
     'site_config' => array(
-        'site_name'   => 'ECDO',
+        'site_name'   => 'Backend',
         'title'       => 'Backend for Laravel 4',
         'description' => 'Laravel 4 Admin Panel'
     ),
