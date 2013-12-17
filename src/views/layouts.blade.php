@@ -146,7 +146,7 @@
 
 <div class="clearfix"></div>
 <div id="footer">
-    <p>2013 &copy; {{ $backend['site_name'] }} By <a href="http://www.ecdo.cc" target="_blank">ecdo.cc</a></p>
+    <p>2013 &copy; {{ $backend['site_name'] }} By <a href="http://www.lapland.name" target="_blank">cooper</a></p>
 </div>
 
 <!-- #helpModal -->
