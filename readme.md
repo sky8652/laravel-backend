@@ -35,7 +35,7 @@
 'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 ```
 
-主意：使用中文包请修改 `'locale' => 'zh-cn'`,
+注意：使用中文包请修改 `'locale' => 'zh-cn'`,
 
 最后执行 `php artisan backend:install`
 
