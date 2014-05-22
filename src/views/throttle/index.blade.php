@@ -30,6 +30,10 @@
                             <p>
                                 <a href="{{ route('admin.users.throttling.update',array($user->id,'unban')) }}"
                                    class="btn btn-primary" rel="tooltip" title="UnBan User"
+                                   data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                   data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                   data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                   data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
                                    data-method="put" data-modal-text="Unban this user?">
                                     <i class="icon-check"></i>
                                     Unban User
@@ -47,6 +51,10 @@
                             <p>
                                 <a href="{{ route('admin.users.throttling.update',array($user->id,'ban')) }}"
                                    class="btn btn-danger" rel="tooltip" title="Ban User"
+                                   data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                   data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                   data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                   data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
                                    data-method="put" data-modal-text="Ban this user?">
                                     <i class="icon-ban-circle"></i>
                                     Ban User
@@ -66,6 +74,10 @@
                         <p>
                             <a href="{{ route('admin.users.throttling.update',array($user->id,'unsuspend')) }}"
                                class="btn btn-primary" rel="tooltip" title="UnBan User"
+                                data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
                                data-method="put" data-modal-text="Unsuspend this user?">
                                 <i class="icon-check"></i>
                                 Unsuspend User
@@ -83,6 +95,10 @@
                         <p>
                             <a href="{{ route('admin.users.throttling.update',array($user->id,'suspend')) }}"
                                class="btn btn-danger" rel="tooltip" title="Ban User"
+                                data-modal-header = "{{ Lang::get('backend::common.please_confirm') }}"
+                                data-modal-ok = "{{ Lang::get('backend::common.ok') }}"
+                                data-modal-cancel = "{{ Lang::get('backend::common.cancel') }}"
+                                data-modal-sure = "{{ Lang::get('backend::common.are_you_sure') }}"
                                data-method="put" data-modal-text="Suspend this user?">
                                 <i class="icon-ban-circle"></i>
                                 Suspend User
